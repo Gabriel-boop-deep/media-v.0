@@ -6,47 +6,48 @@ class Desafio
     static void Main()
     {
     	int c=0;
-    	double nota,media,soma;
+    	double nota,media,soma,a;
     	int res=0;
     	soma=0;
-   
+        a=1;
     	
     
-    	while (res!=1 )
+    	while (res!=null)
     	{
     		
-    		Console.WriteLine("Insira a nota: ");
+    		//Console.WriteLine("Insira a nota: ");
     		nota=double.Parse(Console.ReadLine());
-    		if (nota<0.0 || nota >10.0)
+    		if (nota<0 || nota >10)
     		{
-    			Console.WriteLine("Nota inválida");
+    			Console.WriteLine("nota invalida");
     		}
-    		else if (nota<=10.0 && nota>=0.0)
+    		else if (nota<=10 && nota>=0)
     		{
     			c=c+1;
     			soma=soma+nota;
     		    			
-    			if(res>=0 && res<=1 && c==2)
+    			if(c==2)
     			{
     				media=soma/c;
-    	            Console.WriteLine(media.ToString("F2"));
-    				Console.WriteLine("Quer parar?\n(1-sim)\n(0-não)");
-    		        res=int.Parse(Console.ReadLine());
-    		        c=0;
+    				Console.WriteLine("media = "+ Math.Round(media,2));
+    				c=0;
     		        soma=0;
+    		        Console.WriteLine("novo calculo (1-sim) (2-nao)");
+    		        res=int.Parse(Console.ReadLine());
+    		        while(res>2 || res<=0)
+    		        {
+    		  	
+       			    Console.WriteLine("novo calculo (1-sim) (2-nao)");
+    		        res=int.Parse(Console.ReadLine());
     		        
-    		        
-    			}
-    			
-    			if (res<0 || res >1 && c==2)
-    			
-    			{
-    				while (res<0 || res >1)
+    		        }
+    				if (res ==2)
     				{
-    					Console.WriteLine("Quer parar?\n(1-sim)\n(0-não)");
-    		            res=int.Parse(Console.ReadLine());
+    					break;
     				}
+        				
     			}
+    
     		}
     		
     	}
